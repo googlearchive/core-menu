@@ -12,6 +12,7 @@ html /deep/ core-menu {
   margin: 12px;
 }
 
-html /deep/ core-menu > core-item {
+polyfill-next-selector { content: 'core-menu > core-item'; }
+html /deep/ core-menu::shadow ::content > core-item {
   cursor: default;
 }
