@@ -4,6 +4,7 @@
   "dependencies": {
     "core-selector": "Polymer/core-selector#master",
     "core-collapse": "Polymer/core-collapse#master",
+    "core-a11y-keys": "Polymer/core-a11y-keys#master",
     "core-item": "Polymer/core-item#master"
   }
 }
