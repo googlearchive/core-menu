@@ -61,7 +61,7 @@ The above will style `Topic1` and `Topic2` to have font color red.
 <link rel="import" href="../core-menu/core-menu.html">
 <link rel="import" href="../core-collapse/core-collapse.html">
 
-<polymer-element name="core-submenu" attributes="selected selectedItem selectedAttribute label icon src valueattr">
+<polymer-element name="core-submenu" attributes="selected selectedItem selectedAttribute label icon src valueattr notap">
 <template>
 
   <link rel="stylesheet" href="core-submenu.css">
@@ -86,6 +86,16 @@ The above will style `Topic1` and `Topic2` to have font color red.
     },
 
     opened: false,
+    
+    /**
+    * Set this to true to disallow changing the selection via the
+    * `activateEvent`.
+    *
+    * @attribute notap
+    * @type boolean
+    * @default false
+    */
+    notap: false,
 
     get items() {
       return this.$.submenu.items;
@@ -114,7 +124,7 @@ The above will style `Topic1` and `Topic2` to have font color red.
     },
 
     activate: function() {
-      if (this.hasItems() && this.active) {
+      if (!this.notap && this.hasItems() && this.active) {
         this.toggle();
         this.unselectAllItems();
       }
